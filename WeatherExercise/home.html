@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Weather</title>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="heading" class="text-center">
+    <h1>Weather Page</h1>
+    <hr/>
+    <ul class="list-group" id="errorMessages"></ul>
+</div>
+
+<div class="container" id="mainDiv">
+    <form class="form-horizontal" id="weather-form">
+
+        <label class="col-md-3 control-label" for="zipCode">
+            Zip Code:
+        </label>
+        <div class="col-md-2">
+            <input type="text"
+                   id="zipCode"
+                   class="form-control"
+                   maxlength="5"
+                   pattern="[0-9]{5}"
+                   title="Five digit zip code"
+                   placeholder="Zip Code" required/>
+        </div>
+        <label class="col-md-1 control-label" for="unit">
+            Unit:
+        </label>
+        <div class="col-md-2">
+            <select id="unit" class="form-control">
+                <option selected value="imperial">Imperial</option>
+                <option value="metric">Metric</option>
+            </select>
+        </div>
+        <button id="get-weather-button" class="btn btn-primary">
+            Get Weather
+        </button>
+    </form>
+</div>
+<hr/>
+<!-- current conditions div -->
+<div class="container">
+    <div id="current-conditions" class="container" style="display: none">
+    </div>
+
+    <div id="image-description" class="col-md-4">
+        <div class="text-center" id="showIcon"></div>
+
+
+    </div>
+    <div id="temp-humidity-wind" class="col-md-4">
+
+    </div>
+
+</div>
+
+
+<!-- five day forecast div -->
+<hr/>
+
+<div class="container">
+    <div id="five-day-forecast" class="container" style="display: none">
+        <h1>Five Day Forecast</h1>
+    </div>
+
+    <div id="day-one" class="col-md-2">
+
+    </div>
+    <div id="day-two" class="col-md-2">
+
+    </div>
+    <div id="day-three" class="col-md-2">
+
+    </div>
+    <div id="day-four" class="col-md-2">
+
+    </div>
+    <div id="day-five" class="col-md-2">
+
+    </div>
+</div>
+
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/home.js"></script>
+
+
+</body>
+</html>
