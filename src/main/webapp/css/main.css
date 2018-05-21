@@ -1,0 +1,6 @@
+body {background-image: url("superhero.jpg"); background-size: cover; background-repeat: no-repeat;}
+
+
+.container{
+    background-color: rgba(255, 255, 255, 0.8)
+}

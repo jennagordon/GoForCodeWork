@@ -15,26 +15,17 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
 
     <!-- Bean definitions go here -->
-
-
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename">
             <value>messages</value>
         </property>
     </bean>
 
-
-
-    <bean id="dao"
-          class="com.sg.dao.DvdDaoJdbcTemplateImpl">
-        <property name="jdbcTemplate" ref="jdbcTemplate"/>
-    </bean>
-
     <tx:annotation-driven/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/DvdLibrary"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/Superhero"/>
         <property name="username" value="root" />
         <property name="password" value="root" />
         <property name="initialSize" value="5" />
@@ -49,5 +40,38 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
+    <bean id="heroDao" class="com.sg.dao.HeroDaoImpl"/>
+    <bean id="heroService" class="com.sg.service.HeroServiceImpl" />
+    <bean id="heroWebService" class="com.sg.webservice.HeroWebServiceImpl"/>
 
+    <bean id="heroOrganizationDao" class="com.sg.dao.HeroOrganizationDaoImpl"/>
+    <bean id="heroOrganizationService" class="com.sg.service.HeroOrganizationServiceImpl"/>
+
+    <bean id="heroPowerDao" class="com.sg.dao.HeroPowerDaoImpl"/>
+    <bean id="heroPowerService" class="com.sg.service.HeroPowerServiceImpl"/>
+
+    <bean id="heroSightingDao" class="com.sg.dao.HeroSightingDaoImpl"/>
+    <bean id="heroSightingService" class="com.sg.service.HeroSightingServiceImpl"/>
+
+    <bean id="locationDao" class="com.sg.dao.LocationDaoImpl"/>
+    <bean id="locationService" class="com.sg.service.LocationServiceImpl"/>
+    <bean id="locationWebService" class="com.sg.webservice.LocationWebServiceImpl"/>
+
+    <bean id="organizationDao" class="com.sg.dao.OrganizationDaoImpl"/>
+    <bean id="organizationService" class="com.sg.service.OrganizationServiceImpl"/>
+    <bean id="organizationWebService" class="com.sg.webservice.OrganizationWebServiceImpl"/>
+
+    <bean id="powerDao" class="com.sg.dao.PowerDaoImpl"/>
+    <bean id="powerService" class="com.sg.service.PowerServiceImpl"/>
+    <bean id="powerWebService" class="com.sg.webservice.PowerWebServiceImpl"/>
+
+    <bean id="sightingDao" class="com.sg.dao.SightingDaoImpl"/>
+    <bean id="sightingService" class="com.sg.service.SightingServiceImpl"/>
+    <bean id="sightingWebService" class="com.sg.webservice.SightingWebServiceImpl"/>
+
+    <bean id="homePageWebService" class="com.sg.webservice.HomePageWebServiceImpl"/>
+
+
+
+    
 </beans>
