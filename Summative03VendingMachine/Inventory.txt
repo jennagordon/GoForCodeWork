@@ -1,0 +1,4 @@
+A1::Chips::1.50::0
+D1::Cheetos::1.50::0
+C1::Milky Way::1.25::3
+B1::Gummies::1.00::4
