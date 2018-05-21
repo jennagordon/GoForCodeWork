@@ -15,19 +15,26 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
 
     <!-- Bean definitions go here -->
-    <bean id="contactListDao" class="com.sg.dao.ContactListDaoDbImpl">
-        <property name="jdbcTemplate" ref="jdbcTemplate" />
+
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename">
+            <value>messages</value>
+        </property>
     </bean>
 
-    <bean id="userDao" class="com.sg.dao.UserDaoDbImpl">
-        <property name="jdbcTemplate" ref="jdbcTemplate" />
+
+
+    <bean id="dao"
+          class="com.sg.dao.DvdDaoJdbcTemplateImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 
-    <tx:annotation-driven />
+    <tx:annotation-driven/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/contact_list" />
+        <property name="url" value="jdbc:mysql://localhost:3306/DvdLibrary"/>
         <property name="username" value="root" />
         <property name="password" value="root" />
         <property name="initialSize" value="5" />
@@ -44,5 +51,3 @@
 
 
 </beans>
-
-
